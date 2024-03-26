@@ -1,0 +1,20 @@
+
+<ion-content>
+  <swiper-container
+  #slide
+    (slidechange)="swiperSlideChanged($event)"
+    [pagination]="true"
+  >
+    <swiper-slide *ngFor="let slide of slides">
+      <img [src]="slide.img" alt="" />
+      <h3 class="ion-padding ion-text-center">
+        {{slide.msg}}
+      </h3>
+      <ion-button
+      color="success"
+        expand="block"
+        (click)="onLogin()"
+        *ngIf="isEnd"> Sign In Now</ion-button>
+    </swiper-slide>
+  </swiper-container>
+</ion-content>
