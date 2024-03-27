@@ -1,13 +1,105 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">login</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <ion-img class="app-logo" src="assets/icon/logo-wbg.png"> </ion-img>
+    </ion-col>
+  </ion-row>
+  <ion-row class="mb-10">
+    <ion-col class="ion-text-center">
+      <h1>Welcome</h1>
+      <ion-label>Please enter your detils to sign in</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row class="mb-20">
+    <ion-col class="ion-text-center">
+      <ion-card class="card">
+        <ion-card-header style="padding: 7px !important">
+          <ion-card-title>
+            <img
+              class="social-logo"
+              src="assets/images/logos/google.svg"
+              alt=""
+            />
+          </ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+    <ion-col class="ion-text-center">
+      <ion-card class="card">
+        <ion-card-header style="padding: 7px !important">
+          <ion-card-title>
+            <img
+              class="social-logo"
+              src="assets/images/logos/apple.svg"
+              alt=""
+            />
+          </ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+    <ion-col class="ion-text-center">
+      <ion-card class="card">
+        <ion-card-header style="padding: 7px !important">
+          <ion-card-title>
+            <img
+              class="social-logo"
+              src="assets/images/logos/insta.svg"
+              alt=""
+            />
+          </ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <ion-row>
+      <ion-col class="ion-padding">
+        <ion-input
+          formControlName="email"
+          label="Email"
+          labelPlacement="floating"
+          type="email"
+          placeholder="email@domain.com"
+          fill="outline"
+        ></ion-input>
+        <div
+          *ngIf="this.loginForm.controls?.['email'].touched && this.loginForm.controls?.['email'].invalid"
+        >
+          <div
+            class="ion-padding"
+            *ngIf="this.loginForm.controls?.['email'].errors?.['required']"
+          >
+            <ion-text color="danger">Email is required.</ion-text>
+          </div>
+          <div
+            class="ion-padding"
+            *ngIf="this.loginForm.controls?.['email'].errors?.['email']"
+          >
+            <ion-text color="danger"> Invalid Email</ion-text>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-padding">
+        <ion-input
+          formControlName="password"
+          label="Password"
+          labelPlacement="floating"
+          type="password"
+          fill="outline" 
+        ></ion-input>
+        <div
+          *ngIf="this.loginForm.controls?.['password'].touched && this.loginForm.controls?.['password'].invalid"
+        >
+          <div
+            class="ion-padding"
+            *ngIf="this.loginForm.controls?.['password'].errors?.['required']"
+          >
+            <ion-text color="danger">password is required.</ion-text>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </form>
 </ion-content>
