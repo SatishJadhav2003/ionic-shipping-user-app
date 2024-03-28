@@ -7,7 +7,7 @@
   <ion-row class="mb-10">
     <ion-col class="ion-text-center">
       <h1>Welcome</h1>
-      <ion-label>Please enter your detils to sign in</ion-label>
+      <ion-label>Please enter your details to sign in</ion-label>
     </ion-col>
   </ion-row>
   <ion-row class="mb-20">
@@ -81,8 +81,9 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col class="ion-padding">
+      <ion-col class="ion-padding ion-text-end">
         <ion-input
+        class="ion-text-start"
           formControlName="password"
           label="Password"
           labelPlacement="floating"
@@ -99,6 +100,19 @@
             <ion-text color="danger">password is required.</ion-text>
           </div>
         </div>
+        <ion-text color="primary"><sub>Forgot Password ?</sub></ion-text> 
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-text-center" >
+        <ion-button class="submit-btn" expand="full"  type="submit" >
+          Login 
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-text-center" >
+        <ion-text>Don't have an account? <ion-text color="primary" routerLink="/signup" >Create Here</ion-text> </ion-text>
       </ion-col>
     </ion-row>
   </form>
