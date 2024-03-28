@@ -62,26 +62,11 @@
           placeholder="email@domain.com"
           fill="outline"
         ></ion-input>
-        <div
-          *ngIf="this.loginForm.controls?.['email'].touched && this.loginForm.controls?.['email'].invalid"
-        >
-          <div
-            class="ion-padding"
-            *ngIf="this.loginForm.controls?.['email'].errors?.['required']"
-          >
-            <ion-text color="danger">Email is required.</ion-text>
-          </div>
-          <div
-            class="ion-padding"
-            *ngIf="this.loginForm.controls?.['email'].errors?.['email']"
-          >
-            <ion-text color="danger"> Invalid Email</ion-text>
-          </div>
-        </div>
+
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col class="ion-padding ion-text-end">
+      <ion-col class="password ion-text-end">
         <ion-input
         class="ion-text-start"
           formControlName="password"
@@ -90,16 +75,7 @@
           type="password"
           fill="outline" 
         ></ion-input>
-        <div
-          *ngIf="this.loginForm.controls?.['password'].touched && this.loginForm.controls?.['password'].invalid"
-        >
-          <div
-            class="ion-padding"
-            *ngIf="this.loginForm.controls?.['password'].errors?.['required']"
-          >
-            <ion-text color="danger">password is required.</ion-text>
-          </div>
-        </div>
+
         <ion-text color="primary"><sub>Forgot Password ?</sub></ion-text> 
       </ion-col>
     </ion-row>

@@ -1,13 +1,117 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>signup</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <ion-img class="app-logo" src="assets/icon/logo-wbg.png"> </ion-img>
+    </ion-col>
+  </ion-row>
+  <ion-row class="mb-10">
+    <ion-col class="ion-text-center">
+      <h1>Create Account</h1>
+      <ion-label class="label" >Please enter your details to sign up</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row class="mb-20">
+    <ion-col class="ion-text-center">
+      <ion-card class="card">
+        <ion-card-header style="padding: 7px !important">
+          <ion-card-title>
+            <img
+              class="social-logo"
+              src="assets/images/logos/google.svg"
+              alt=""
+            />
+          </ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+    <ion-col class="ion-text-center">
+      <ion-card class="card">
+        <ion-card-header style="padding: 7px !important">
+          <ion-card-title>
+            <img
+              class="social-logo"
+              src="assets/images/logos/apple.svg"
+              alt=""
+            />
+          </ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+    <ion-col class="ion-text-center">
+      <ion-card class="card">
+        <ion-card-header style="padding: 7px !important">
+          <ion-card-title>
+            <img
+              class="social-logo"
+              src="assets/images/logos/insta.svg"
+              alt=""
+            />
+          </ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  <form [formGroup]="signupForm" (ngSubmit)="onSignUp()">
+    <ion-row>
+      <ion-col class="password">
+          <ion-input
+              formControlName="firstName"
+              label="First Name"
+              labelPlacement="floating"
+              type="text"
+              placeholder="Enter your first name"
+              fill="outline"
+          ></ion-input>
+      </ion-col>
+  </ion-row>
+  <ion-row>
+      <ion-col class="password">
+          <ion-input
+              formControlName="lastName"
+              label="Last Name"
+              labelPlacement="floating"
+              type="text"
+              placeholder="Enter your last name"
+              fill="outline"
+          ></ion-input>
+      </ion-col>
+  </ion-row>
+    <ion-row>
+      <ion-col class="password">
+        <ion-input
+          formControlName="email"
+          label="Email"
+          labelPlacement="floating"
+          type="email"
+          placeholder="email@domain.com"
+          fill="outline"
+        ></ion-input>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">signup</ion-title>
-    </ion-toolbar>
-  </ion-header>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="password ion-text-end">
+        <ion-input
+        class="ion-text-start"
+          formControlName="password"
+          label="Password"
+          labelPlacement="floating"
+          type="password"
+          fill="outline" 
+        ></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-text-center" >
+        <ion-button class="submit-btn" expand="full"  type="submit" >
+          Sign Up 
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-text-center" >
+        <ion-text>Alredy have an account? <ion-text color="primary" routerLink="/login" >Login Here</ion-text> </ion-text>
+      </ion-col>
+    </ion-row>
+  </form>
 </ion-content>
