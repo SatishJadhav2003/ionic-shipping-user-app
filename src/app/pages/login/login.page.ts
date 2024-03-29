@@ -13,7 +13,19 @@ import { ApiService } from 'src/app/Services/api.service';
 export class LoginPage implements OnInit {
   loginForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private util: UtilService,private api:ApiService,private navCtrl:NavController) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private util: UtilService,
+    private api: ApiService,
+    private navCtrl: NavController
+  ) {}
+
+  async ionViewWillEnter() {
+   if(localStorage.getItem('isLoggedIn')==='true')
+   {
+    this.navCtrl.navigateForward('home')
+   }
+  }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -39,25 +51,32 @@ export class LoginPage implements OnInit {
       this.util.warnToast('Please enter password', 1500);
       return;
     }
-    this.util.show()
+    this.util.show();
     // Login logic
-    this.api.post('api/login', this.loginForm.value).then((res) => {
-      console.log("Login Success");
-      localStorage.setItem('token', res['token']);
-      localStorage.setItem('user', JSON.stringify(res['user']));
-      // Remove this settimeout line after integrating with backend this is for prevent error
-      setTimeout(() => {
+    this.api
+      .post('api/login', this.loginForm.value)
+      .then(
+        (res) => {
+          console.log('Login Success');
+          localStorage.setItem('token', res['token']);
+          localStorage.setItem('user', JSON.stringify(res['user']));
+          // Remove this settimeout line after integrating with backend this is for prevent error
+          setTimeout(() => {
+            this.util.hide();
+            this.util.successToast('Login Success', 700);
+            localStorage.setItem('isLoggedIn', 'true');
+            this.navCtrl.navigateRoot('home');
+          }, 500);
+        },
+        (error) => {
+          this.util.hide();
+          this.util.apiErrorHandler(error);
+        }
+      )
+      .catch((error) => {
         this.util.hide();
-        this.util.successToast('Login Success', 700);
-        this.navCtrl.navigateRoot('home');
-      }, 500);
-    }, error => {
-      this.util.hide();
-      this.util.apiErrorHandler(error);
-    }).catch((error) => {
-      this.util.hide();
-      console.log(error);
-      this.util.apiErrorHandler(error);
-    })
+        console.log(error);
+        this.util.apiErrorHandler(error);
+      });
   }
 }

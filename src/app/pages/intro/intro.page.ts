@@ -24,20 +24,20 @@ export class IntroPage implements OnInit {
 
   ngOnInit() {
     console.log("Intro")
+    localStorage.setItem('intro','false')
   }
 
   swiperSlideChanged(e:any)
   {
     console.log("Hello")
-    // console.log(this.slide.activeIndex)
     console.log(e)
-    console.log(e.detail[0].activeIndex)
-    console.log(e.detail[0].isEnd)
+    // console.log(e.detail[0].activeIndex)
+    // console.log(e.detail[0].isEnd)
     this.isEnd = e.detail[0].isEnd;
   }
   
   onLogin(){
-    console.log("Login")
+    localStorage.setItem('intro','true')
     this.router.navigate(['/login'])
   }
 

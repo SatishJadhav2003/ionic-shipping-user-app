@@ -40,7 +40,7 @@ export class SignupPage implements OnInit {
         return;
       }
       this.util.show();
-      const res = await this.api.post('api/login', this.signupForm.value);
+      const res = await this.api.post('api/signup', this.signupForm.value);
       localStorage.setItem('token', res['token']);
       localStorage.setItem('user', JSON.stringify(res['user']));
       // Remove this settimeout line after integrating with backend this is for prevent error
@@ -48,6 +48,7 @@ export class SignupPage implements OnInit {
       setTimeout(() => {
         this.util.hide();
         this.util.successToast('Sign Up Success', 700);
+        localStorage.setItem('isLoggedIn', 'true');
         this.navCtrl.navigateRoot('home');
       }, 300);
     } catch (error) {

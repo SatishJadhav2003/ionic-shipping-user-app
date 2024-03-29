@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { register } 
-from 'swiper/element/bundle';
+import { register } from 'swiper/element/bundle';
 register();
 @Component({
   selector: 'app-root',
@@ -9,11 +8,17 @@ register();
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(private navCtrl:NavController) {
-   const isOld = localStorage.getItem('isWelcomeSuccess'); 
-   if(isOld)
-   {
-this.navCtrl.navigateForward('/Login')
-   }
+  constructor(private navCtrl: NavController) {
+    const intro = localStorage.getItem('intro');
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    if (intro == 'true') {
+      this.navCtrl.navigateForward('/login');
+    } else {
+      if (isLoggedIn == 'true') {
+        this.navCtrl.navigateForward('/home');
+      } else {
+        this.navCtrl.navigateForward('/intro');
+      }
+    }
   }
 }
