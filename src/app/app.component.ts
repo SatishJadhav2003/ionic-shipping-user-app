@@ -12,13 +12,13 @@ export class AppComponent {
     const intro = localStorage.getItem('intro');
     const isLoggedIn = localStorage.getItem('isLoggedIn');
     if (intro == 'true') {
-      this.navCtrl.navigateForward('/login');
-    } else {
       if (isLoggedIn == 'true') {
         this.navCtrl.navigateForward('/home');
       } else {
-        this.navCtrl.navigateForward('/intro');
+        this.navCtrl.navigateForward('/login');
       }
+    } else {
+      this.navCtrl.navigateForward('/intro');
     }
   }
 }

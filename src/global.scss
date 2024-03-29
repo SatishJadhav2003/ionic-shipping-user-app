@@ -25,29 +25,45 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
-.mb-5
-{
-    margin-bottom: 5px;
+.mb-5 {
+  margin-bottom: 5px;
 }
-.mb-6
-{
-    margin-bottom: 6px;
+.mb-6 {
+  margin-bottom: 6px;
 }
-.mb-7
-{
-    margin-bottom: 7px;
+.mb-7 {
+  margin-bottom: 7px;
 }
-.mb-10
-{
-    margin-bottom: 10px;
+.mb-10 {
+  margin-bottom: 10px;
 }
 
-.mb-15
-{
-    margin-bottom: 15px;
+.mb-15 {
+  margin-bottom: 15px;
 }
 
-.mb-20
-{
-    margin-bottom: 20px;
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.ion-display-flex {
+  display: flex;
+}
+
+.notification-icon {
+  height: 4.6vh;
+  width: 5vh;
+  padding-right: 14px;
+}
+
+// Theme color
+.app-theme {
+  --background: #ad03fc !important;
+  --color: #fff !important;
+  background-color: #ad03fc !important;
+  color: #fff;
+}
+
+.ion-color {
+  --color: #fff !important;
 }

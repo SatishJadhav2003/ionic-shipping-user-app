@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import Login from './login.interface';
-import { NavController, ToastController } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
 import { UtilService } from 'src/app/Services/util.service';
 import { ApiService } from 'src/app/Services/api.service';
 
@@ -32,9 +31,6 @@ export class LoginPage implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
     });
-  }
-  showPassword(input: any): any {
-    input.type = input.type === 'password' ? 'text' : 'password';
   }
   async onLogin() {
     if (
