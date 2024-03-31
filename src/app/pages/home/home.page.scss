@@ -1,26 +1,76 @@
-.profile-icon
-{
-    height: 5vh;
-    width: 5vh;
+.profile-icon {
+  height: 5vh;
+  width: 5vh;
 }
 .background-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(../../../assets/images/package.jpeg);
-    opacity: 0.15; /* Adjust the opacity value as per your preference */
-    z-index: -1;
-  }
-.heading
-{
-    font-weight: bold;
-    font-size: 3vh;
-
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../../assets/images/package.jpeg);
+  opacity: 0.15; /* Adjust the opacity value as per your preference */
+  z-index: -1;
 }
-.search
-{
-    --border-radius: 25px;
+.heading {
+  font-weight: bold;
+  font-size: 3vh;
+}
+.search {
+  --border-radius: 25px;
 }
 
+.orders-card {
+  padding-inline-start: var(--ion-padding, 9px);
+  padding-inline-end: var(--ion-padding, 9px);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.order-img {
+  height: 5vh;
+  width: 5vh;
+}
+h5 {
+  margin: 2px 0px;
+  font-weight: bolder;
+}
+.card-subtitle {
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.view-more-vertical {
+  height: 5.4vh;
+  width: 3vh;
+}
+
+.copy-message {
+  color: green;
+  font-weight: bold;
+}
+
+hr {
+  background-color: #c7c2c2;
+  border: none;
+  height: 1px;
+  margin: 3px 0px;
+}
+
+.status-col {
+  padding-top: 0px;
+  // padding-bottom: 0px;
+}
+
+.status {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.status-msg {
+  font-weight: 500;
+  font-size: 1rem;
+  color: orange;
+  margin-left: 13px;
+}

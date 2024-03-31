@@ -46,6 +46,16 @@
   margin-bottom: 20px;
 }
 
+.ml-2
+{
+  margin-left: 2px;
+}
+.ml-4
+{
+  margin-left: 4px;
+
+}
+
 .ion-display-flex {
   display: flex;
 }
@@ -62,6 +72,11 @@
   --color: #fff !important;
   background-color: #ad03fc !important;
   color: #fff;
+}
+
+.theme-color
+{
+  color: #ad03fc!important;
 }
 
 .ion-color {

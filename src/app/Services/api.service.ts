@@ -8,7 +8,8 @@ import { environment } from 'src/environments/environment';
 export class ApiService {
   baseUrl: string = '';
   constructor(private http: HttpClient) {
-    this.baseUrl = environment.baseUrl;
+    // this.baseUrl = environment.baseUrl;
+    this.baseUrl = 'http://localhost:8000/api/';
   }
 
   JSON_to_URLEncoded(element, key?, list?) {
