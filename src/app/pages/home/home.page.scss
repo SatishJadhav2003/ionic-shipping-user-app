@@ -1,6 +1,6 @@
 .profile-icon {
-  height: 5vh;
-  width: 5vh;
+  height: 4vh;
+  width: 4vh;
 }
 .background-overlay {
   position: absolute;
@@ -25,6 +25,7 @@
   padding-inline-end: var(--ion-padding, 9px);
   padding-top: 5px;
   padding-bottom: 5px;
+  margin-top: 6px;
 }
 
 .order-img {
@@ -73,4 +74,16 @@ hr {
   font-size: 1rem;
   color: orange;
   margin-left: 13px;
+}
+
+.card 
+{
+  width: 30%;
+  margin: 6px;
+  text-align: center;
+
+}
+.icon-title
+{
+  font-size: 15px;
 }
